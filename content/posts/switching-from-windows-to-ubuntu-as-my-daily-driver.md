@@ -4,11 +4,9 @@ date: 2019-11-03T10:34:21-05:00
 draft: false
 ---
 
-# Switching from Windows to Ubuntu as My Daily Driver
+About a week ago, I started using Ubuntu as my daily driver instead of Windows. This post explains why and (partially) documents my setup ... mostly to jog my memory when I forget half of what I did, but hopefully someone else considering a similar setup will benefit too.
 
-About a week ago, I started using Ubuntu as my daily driver instead of Windows. This post explains why and (partially) documents my setup ... mostly to jog my memory when I forget half of what I did, but hopefully someone else considering a similar setup will benefit.
-
-## Why Not Windows 10?
+# Why Not Windows 10?
 
 I like Windows. PowerShell is a fantastic abstraction of .NET, and now that it's cross platform, I'll be using it on Linux too. But recent events inspired me to make a change.
 
@@ -20,11 +18,9 @@ I'd already been growing increasingly frustrated with "everything-as-a-service" 
 
 Also, I've wanted to get more familiar with Linux to use it as a server for my applications.
 
-With the camel's back finally broken, I decided to make the switch.
+# Window Manager Experimentation
 
-## Trying on Window Managers
-
-### i3wm
+## i3wm
 
 I'd installed Xubuntu on my laptop long ago (dual boot) but hadn't really used it. Coming back, I started looking for ways to spruce it up. I soon found so-called rices that I liked on [r/unixporn](https://www.reddit.com/r/unixporn) using [i3wm](https://i3wm.org/). I was impressed by Linux tiling window managers in general, compared to Windows's lackluster tiling support. I liked that i3 resized the existing grid automatically and how easy workspaces were. So I installed i3wm-gaps and started playing with my dotfiles.
 
@@ -36,9 +32,9 @@ I was impressed by i3 (and I still am), but I quickly realized it was "bring you
 
 I'd bitten off more than I could chew. Remembering why I switched in the first place, I decided to go back to Xfce for the time being and possibly return to i3wm when I was more comfortable.
 
-### Xfce
+## Xfce
 
-I switched back to Xfce and breathed a sigh of relief. The UI was familiar but felt faster than Windows had been on my machine. Plus there was no telemetry or Cortana to worry about. However, I didn't care for how it looked very much.
+Xfce felt like coming home. The UI was familiar but felt faster than Windows had been on my machine. Plus there was no telemetry or Cortana to worry about. However, I didn't care for how it looked.
 
 Going to back to [r/unixporn](https://www.reddit.com/r/unixporn), I hunted up some Xfce rices. [I soon found one I liked](https://www.reddit.com/r/unixporn/comments/dav66r/xfce_nordic_xfce/) and set about replicating it.
 
@@ -54,11 +50,11 @@ Going to back to [r/unixporn](https://www.reddit.com/r/unixporn), I hunted up so
 	1. Extract into `~/.icons/`
 	1. Open *Appearance* and click *Nordic* on the *Icons* tab
 
-## Citrix
+# Installing Citrix Workspace
 
-I also installed Citrix Workspace to connect to a work VM. Link: https://www.citrix.com/downloads/workspace-app/linux/workspace-app-for-linux-latest.html
+My work uses Citrix, so I needed to install Citrix Workspace to connect to a work VM. The download page for Linux is https://www.citrix.com/downloads/workspace-app/linux/workspace-app-for-linux-latest.html.
 
-When I tried to connect, I got the error: 
+After installation, I tried to connect and got the error: 
 
 > SSL error  
 > Contact your help desk with the folling information: You have not chosen to trust "DigiCert High Assurance EV Root CA", the issuer of the server's security certificate (SSL error 61)
@@ -67,25 +63,25 @@ Copying the certificate from `/etc/ssl/certs/` into the Citrix client's `cacerts
 
     sudo cp -v /etc/ssl/certs/DigiCert_High_Assurance_EV_Root_CA.pem /opt/Citrix/ICAClient/keystore/cacerts/
 
-## Miscellaneous
+# Miscellaneous Other Changes
 
 * Changed the whisker menu shortcut to <kbd>Super</kbd> + <kbd>Space</kbd> (launch *Keyboard*, go to the *Application Shortcuts* tab, scroll to `xfce4-popup-whiskermenu`, and click *Edit*)
 * Installed Mono (in order to use KeePass) via the instructions [here](https://www.mono-project.com/download/stable/#download-lin)
 * Installed Remmina (for RDP) using the Software app
 
 
-## Conclusion
+# Conclusion
 
-It's going well so far.
+It's going well so far. I plan to stick with it. I see more pros than cons at this point because there are still stars in my eyes, but there are definitely both.
 
 Pros:
 
 * **Free as in beer:** If I want to create a product whose infrastructure requires hundreds or thousands of VM instances, I don't have to worry about licensing costs.
 * **Free as in speech:** I can hack the source code if I need to.
 * **Free of bloatware:** There's no Cortana trying to search the Internet when I search the Start menu. (If I wanted to search the Internet, I'd have opened a browser!)
-* **Free of forced updates:** I love that I can restart my computer without Microsoft making me update. (No, please, I'm about to give a presentation; I really need to reboot fast!)
+* **Free of forced updates:** I love that I can restart my computer without Microsoft making me update. (I'm about to give a presentation; I really need to reboot fast!)
 
 Cons:
 
 * **AutoHotkey:** I have lots of AutoHotkey scripts on Windows. [The word on StackExchange is that AutoHotkey doesn't run well on Linux, although it can be run through Wine.](https://unix.stackexchange.com/questions/165124/autohotkey-equivalent)
-* **Unfamiliarity:** My unfamiliarity with Linux means I have to stop to Google something more often than I would on Windows.
+* **Unfamiliarity:** I have to stop to Google something more often than I would on Windows.
