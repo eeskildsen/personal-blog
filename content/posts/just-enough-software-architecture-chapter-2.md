@@ -1,5 +1,5 @@
 ---
-title: "Just Enough Software Architecture Chapter 2"
+title: "Just Enough Software Architecture: Chapter 2"
 date: 2019-11-07T12:40:13-05:00
 draft: true
 ---
